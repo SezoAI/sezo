@@ -2,6 +2,9 @@
 
 ![Sezo Cover](https://i.ibb.co/cS7LgyB2/sezo-ai-5.png)
 
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Chat-blue?logo=telegram&style=for-the-badge)](https://t.me/your-telegram-link)
+[![X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-Follow%20Us-black?logo=twitter&style=for-the-badge)](https://x.com/your-twitter-link)
+
 ![NPM Downloads](https://img.shields.io/badge/NPM%20Downloads-1K%2Fmonth-blue?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/badge/GitHub%20Forks-150-orange?style=for-the-badge)
 ![GitHub License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
