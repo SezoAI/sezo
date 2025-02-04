@@ -1,6 +1,15 @@
-# Sezo Agent Kit
+<div align="center">
 
-An open-source toolkit for connecting AI agents to Solana protocols. With Sezo, any AI agent using any model can autonomously perform 60+ Solana actions:
+
+![Sezo Cover](https://i.ibb.co/cS7LgyB2/sezo-ai-5.png)
+
+![NPM Downloads](https://img.shields.io/npm/dm/sezo?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/yourusername/sezo?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/yourusername/sezo?style=for-the-badge)
+
+</div>
+
+An open-source toolkit for connecting AI agents to Solana protocols. Now, any agent, using any model can autonomously perform 60+ Solana actions:
 
 - Trade tokens
 - Launch new tokens
@@ -10,7 +19,7 @@ An open-source toolkit for connecting AI agents to Solana protocols. With Sezo, 
 - Launch tokens on AMMs
 - And more...
 
-Anyone - whether an AI researcher or a crypto-native builder - can bring their AI agents trained with any model and seamlessly integrate with Solana.
+Anyone - whether an SF-based AI researcher or a crypto-native builder - can bring their AI agents trained with any model and seamlessly integrate with Solana.
 
 ## 🔧 Core Blockchain Features
 
@@ -49,7 +58,7 @@ Anyone - whether an AI researcher or a crypto-native builder - can bring their A
    - Lending by Lulo (Best APR for USDC)
    - Send Arcade Games
    - JupSOL staking
-   - Solayer SOL (sSOL) staking
+   - Solayer SOL (sSOL)staking
 
 - **Non-Financial Actions**
   - Gib Work for registering bounties
@@ -80,19 +89,23 @@ Anyone - whether an AI researcher or a crypto-native builder - can bring their A
   - Automated decision-making capabilities
 
 ## 📃 Documentation
-You can view the full documentation of the kit at [docs.sezo.xyz](https://docs.sezo.xyz)
+You can view the full documentation of the kit at [sezo.io/docs](https://sezo.io/docs)
 
 ## 📦 Installation
 
 ```bash
-npm install sezo-agent-kit
+npm install sezo
+
+##
 
 Quick Start
+typescript
+Copy
 
-import { SolanaAgentKit, createSolanaTools } from "solana-agent-kit";
+import { Sezo, createSolanaTools } from "sezo";
 
 // Initialize with private key and optional RPC URL
-const agent = new SolanaAgentKit(
+const agent = new Sezo(
   "your-wallet-private-key-as-base58",
   "https://api.mainnet-beta.solana.com",
   "your-openai-api-key"
@@ -103,6 +116,8 @@ const tools = createSolanaTools(agent);
 
 Usage Examples
 Deploy a New Token
+typescript
+Copy
 
 const result = await agent.deployToken(
   "my ai token", // name
@@ -115,6 +130,8 @@ const result = await agent.deployToken(
 console.log("Token Mint Address:", result.mint.toString());
 
 Create NFT Collection on 3Land
+typescript
+Copy
 
 const isDevnet = false; // (Optional) if not present TX takes place in Mainnet
 const priorityFeeParam = 1000000; // (Optional) if not present the default priority fee will be 50000
@@ -135,6 +152,8 @@ const result = await agent.create3LandCollection(
 Create NFT on 3Land
 
 When creating an NFT using 3Land's tool, it automatically goes for sale on 3.land website
+typescript
+Copy
 
 const isDevnet = true; // (Optional) if not present TX takes place in Mainnet
 const withPool = true; // (Optional) only present if NFT will be created with a Liquidity Pool for a specific SPL token
@@ -159,10 +178,12 @@ const result = await agent.create3LandNft(
   createItemOptions,
   isDevnet, // (Optional) if not present TX takes place in Mainnet
   withPool
-  priorityFeeParam, //(Optional)
+  priorityFeeParam, //(Optional),
 );
 
 Create NFT Collection
+typescript
+Copy
 
 const collection = await agent.deployCollection({
   name: "My NFT Collection",
@@ -177,6 +198,8 @@ const collection = await agent.deployCollection({
 });
 
 Swap Tokens
+typescript
+Copy
 
 import { PublicKey } from "@solana/web3.js";
 
@@ -188,6 +211,8 @@ const signature = await agent.trade(
 );
 
 Lend Tokens
+typescript
+Copy
 
 import { PublicKey } from "@solana/web3.js";
 
@@ -196,18 +221,24 @@ const signature = await agent.lendAssets(
 );
 
 Stake SOL
+typescript
+Copy
 
 const signature = await agent.stake(
   1 // amount in SOL to stake
 );
 
 Stake SOL on Solayer
+typescript
+Copy
 
 const signature = await agent.restake(
   1 // amount in SOL to stake
 );
 
 Send an SPL Token Airdrop via ZK Compression
+typescript
+Copy
 
 import { PublicKey } from "@solana/web3.js";
 
@@ -232,6 +263,9 @@ import { PublicKey } from "@solana/web3.js";
 })();
 
 Fetch Price Data from Pyth
+typescript
+Copy
+
 
 const priceFeedID = await agent.getPythPriceFeedID("SOL");
 
@@ -240,6 +274,8 @@ const price = await agent.getPythPrice(priceFeedID);
 console.log("Price of SOL/USD:", price);
 
 Open PERP Trade
+typescript
+Copy
 
 import { PublicKey } from "@solana/web3.js";
 
@@ -253,6 +289,8 @@ const signature = await agent.openPerpTradeLong({
 });
 
 Close PERP Trade
+typescript
+Copy
 
 import { PublicKey } from "@solana/web3.js";
 
@@ -262,18 +300,25 @@ const signature = await agent.closePerpTradeLong({
 });
 
 Close Empty Token Accounts
+typescript
+Copy
+
 
 const { signature } = await agent.closeEmptyTokenAccounts();
 
 Create a Drift account
 
 Create a drift account with an initial token deposit.
+typescript
+Copy
 
 const result = await agent.createDriftUserAccount()
 
 Create a Drift Vault
 
 Create a drift vault.
+typescript
+Copy
 
 const signature = await agent.createDriftVault({
   name: "my-drift-vault",
@@ -290,42 +335,56 @@ const signature = await agent.createDriftVault({
 Deposit into a Drift Vault
 
 Deposit tokens into a drift vault.
+typescript
+Copy
 
 const signature = await agent.depositIntoDriftVault(100, "41Y8C4oxk4zgJT1KXyQr35UhZcfsp5mP86Z2G7UUzojU")
 
 Deposit into your Drift account
 
 Deposit tokens into your drift account.
+typescript
+Copy
 
 const {txSig} = await agent.depositToDriftUserAccount(100, "USDC")
 
 Derive a Drift Vault address
 
 Derive a drift vault address.
+typescript
+Copy
 
 const vaultPublicKey = await agent.deriveDriftVaultAddress("my-drift-vault")
 
 Do you have a Drift account
 
 Check if agent has a drift account.
+typescript
+Copy
 
 const {hasAccount, account} = await agent.doesUserHaveDriftAccount()
 
 Get Drift account information
 
 Get drift account information.
+typescript
+Copy
 
 const accountInfo = await agent.driftUserAccountInfo()
 
 Request withdrawal from Drift vault
 
 Request withdrawal from drift vault.
+typescript
+Copy
 
 const signature = await agent.requestWithdrawalFromDriftVault(100, "41Y8C4oxk4zgJT1KXyQr35UhZcfsp5mP86Z2G7UUzojU")
 
 Carry out a perpetual trade using a Drift vault
 
 Open a perpetual trade using a drift vault that is delegated to you.
+typescript
+Copy
 
 const signature = await agent.tradeUsingDelegatedDriftVault({
   vault: "41Y8C4oxk4zgJT1KXyQr35UhZcfsp5mP86Z2G7UUzojU",
@@ -339,6 +398,8 @@ const signature = await agent.tradeUsingDelegatedDriftVault({
 Carry out a perpetual trade using your Drift account
 
 Open a perpetual trade using your drift account.
+typescript
+Copy
 
 const signature = await agent.tradeUsingDriftPerpAccount({
   amount: 500,
@@ -351,6 +412,8 @@ const signature = await agent.tradeUsingDriftPerpAccount({
 Update Drift vault parameters
 
 Update drift vault parameters.
+typescript
+Copy
 
 const signature = await agent.updateDriftVault({
   name: "my-drift-vault",
@@ -367,42 +430,56 @@ const signature = await agent.updateDriftVault({
 Withdraw from Drift account
 
 Withdraw tokens from your drift account.
+typescript
+Copy
 
 const {txSig} = await agent.withdrawFromDriftAccount(100, "USDC")
 
 Borrow from Drift
 
 Borrow tokens from drift.
+typescript
+Copy
 
 const {txSig} = await agent.withdrawFromDriftAccount(1, "SOL", true)
 
 Repay Drift loan
 
 Repay a loan from drift.
+typescript
+Copy
 
 const {txSig} = await agent.depositToDriftUserAccount(1, "SOL", true)
 
 Withdraw from Drift vault
 
 Withdraw tokens from a drift vault after the redemption period has elapsed.
+typescript
+Copy
 
 const signature = await agent.withdrawFromDriftVault( "41Y8C4oxk4zgJT1KXyQr35UhZcfsp5mP86Z2G7UUzojU")
 
 Update the address a Drift vault is delegated to
 
 Update the address a drift vault is delegated to.
+typescript
+Copy
 
 const signature = await agent.updateDriftVaultDelegate("41Y8C4oxk4zgJT1KXyQr35UhZcfsp5mP86Z2G7UUzojU", "new-address")
 
 Get Voltr Vault Position Values
 
 Get the current position values and total value of assets in a Voltr vault.
+typescript
+Copy
 
 const values = await agent.voltrGetPositionValues("7opUkqYtxmQRriZvwZkPcg6LqmGjAh1RSEsVrdsGDx5K")
 
 Deposit into Voltr Strategy
 
 Deposit assets into a specific strategy within a Voltr vault.
+typescript
+Copy
 
 const signature = await agent.voltrDepositStrategy(
   new BN("1000000000"), // amount in base units (e.g., 1 USDC = 1000000)
@@ -413,6 +490,8 @@ const signature = await agent.voltrDepositStrategy(
 Withdraw from Voltr Strategy
 
 Withdraw assets from a specific strategy within a Voltr vault.
+typescript
+Copy
 
 const signature = await agent.voltrWithdrawStrategy(
   new BN("1000000000"), // amount in base units (e.g., 1 USDC = 1000000)
@@ -421,22 +500,30 @@ const signature = await agent.voltrWithdrawStrategy(
 )
 
 Get a Solana asset by its ID
+typescript
+Copy
 
 const asset = await agent.getAsset("41Y8C4oxk4zgJT1KXyQr35UhZcfsp5mP86Z2G7UUzojU")
 
 Get a price inference from Allora
 
 Get the price for a given token and timeframe from Allora's API
+typescript
+Copy
 
 const sol5mPrice = await agent.getPriceInference("SOL", "5m");
 console.log("5m price inference of SOL/USD:", sol5mPrice);
 
 List all topics from Allora
+typescript
+Copy
 
 const topics = await agent.getAllTopics();
 console.log("Allora topics:", topics);
 
 Get an inference for an specific topic from Allora
+typescript
+Copy
 
 const inference = await agent.getInferenceByTopicId(42);
 console.log("Allora inference for topic 42:", inference);
@@ -444,6 +531,8 @@ console.log("Allora inference for topic 42:", inference);
 Simulate a Switchboard feed
 
 Simulate a given Switchboard feed. Find or create feeds here.
+typescript
+Copy
 
 const value = await agent.simulateSwitchboardFeed(
       "9wcBMATS8bGLQ2UcRuYjsRAD7TPqB1CMhqfueBx78Uj2", // TRUMP/USD
@@ -460,22 +549,4 @@ const signature = await agent.swap(
   fromChain: "bsc",
   fromToken: "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
   toChain: "solana",
-  toToken: "0x0000000000000000000000000000000000000000",
-  dstAddr: "0xc2d3024d64f27d85e05c40056674Fd18772dd922",
-);
-
-Examples
-LangGraph Multi-Agent System
-
-The repository includes an advanced example of building a multi-agent system using LangGraph and Solana Agent Kit. Located in examples/agent-kit-langgraph, this example demonstrates:
-
-    Multi-agent architecture using LangGraph's StateGraph
-    Specialized agents for different tasks:
-        General purpose agent for basic queries
-        Transfer/Swap agent for transaction operations
-        Read agent for blockchain data queries
-        Manager agent for routing and orchestration
-    Fully typed TypeScript implementation
-    Environment-based configuration
-
-Check out the LangGraph example for a complete implementation of an advanced Solana agent system.
+  toToken
