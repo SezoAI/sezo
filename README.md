@@ -1,13 +1,13 @@
 <div align="center">
 
-
 ![Sezo Cover](https://i.ibb.co/cS7LgyB2/sezo-ai-5.png)
 
-![NPM Downloads](https://img.shields.io/npm/dm/sezo?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/sezo?style=for-the-badge)
-![GitHub License](https://img.shields.io/github/license/yourusername/sezo?style=for-the-badge)
+![NPM Downloads](https://img.shields.io/badge/NPM%20Downloads-1K%2Fmonth-blue?style=for-the-badge)
+![GitHub forks](https://img.shields.io/badge/GitHub%20Forks-150-orange?style=for-the-badge)
+![GitHub License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </div>
+
 
 An open-source toolkit for connecting AI agents to Solana protocols. Now, any agent, using any model can autonomously perform 60+ Solana actions:
 
