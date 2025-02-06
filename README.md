@@ -1,6 +1,6 @@
 <div align="center">
 
-![Sezo Cover](https://i.ibb.co/gZsz6zDv/ddddd.jpg)
+![Sezo Cover](https://i.ibb.co/BKfqkRrC/ddddd.jpg)
 
 [![X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-Follow%20Us-black?logo=twitter&style=for-the-badge)](https://x.com/sezoai)
 
