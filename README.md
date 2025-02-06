@@ -1,8 +1,7 @@
 <div align="center">
 
-![Sezo Cover](https://i.ibb.co/cS7LgyB2/sezo-ai-5.png)
+![Sezo Cover](https://i.ibb.co/gZsz6zDv/ddddd.jpg)
 
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20Chat-blue?logo=telegram&style=for-the-badge)](https://t.me/your-telegram-link)
 [![X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-Follow%20Us-black?logo=twitter&style=for-the-badge)](https://x.com/sezoai)
 
 ![NPM Downloads](https://img.shields.io/badge/NPM%20Downloads-1K%2Fmonth-blue?style=for-the-badge)
